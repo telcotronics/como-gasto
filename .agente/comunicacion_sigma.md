@@ -13,10 +13,10 @@
 - **Base pública:** `https://sigma-bot.telcotronics.com/ecosistema/v1`  
 - **Base interna:** `http://192.168.10.160:5000/ecosistema/v1`  
 - **MCP de sigma-robot (stdio):** `/home/pablinux/Projects/Node/sigma-robot/mcp.js` (Chat MCP para agentes)  
-- **Identidad del Agente:** Agente Cómo Gasto  
+- **Identidad del Agente:** Agente Cómo Gasto (ID asignado en ecosistema: `74`)  
 - **Service ID en MCP de Infraestructura:** `24` (`como-gasto`)  
-- **Estado de Registro:** Solicitud enviada exitosamente (`estado: pendiente`), a la espera de autorización por parte de Pablinux en el panel de control (`/panel/agentes-ecosistema`).
-- **Credenciales privadas:** `solicitud_id` y `codigo_secreto` resguardados en `.env` local privado con permisos `0600`, excluidos de Git en `.gitignore`.
+- **Estado de Registro:** Activo y Autorizado por Pablinux. Token permanente Bearer configurado en `.env` privado (`0600`).
+- **Credenciales privadas:** Resguardadas en `.env` local (`SIGMA_AGENTE_SOLICITUD_ID`, `SIGMA_AGENTE_CODIGO`, `SIGMA_AGENTE_TOKEN`), excluidas de Git en `.gitignore`.
 
 ---
 
