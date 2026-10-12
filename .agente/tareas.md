@@ -27,10 +27,15 @@
 
 ---
 
-## 2. Tareas en Curso y Siguientes Pasos 🚀
+- [x] **Actualización del README.md:** Reemplazado el archivo legado por una guía integral, visual, legible para humanos con capturas y modo demo.
+- [x] **Creación del archivo `agents.md`:** Establecida la guía del agente en la raíz del proyecto según el estándar de Telcotronics.
+- [x] **Registro en el MCP de Infraestructura:** Servicio registrado exitosamente con ID 24 (`como-gasto`) en el MCP en vivo (`http://192.168.10.160:3006/sse`).
+- [x] **Revisión de Commits y Sincronización:** Confirmado y publicado en `origin/master` (commit `baec6af`) con árbol de trabajo 100% limpio.
 
-- [ ] **Actualización del README.md:** Reemplazar el archivo legado de 19 líneas por una guía integral, visual y legible para humanos.
-- [ ] **Creación del archivo `agents.md`:** Establecer la guía del agente para el proyecto de acuerdo con el estándar de Telcotronics.
-- [ ] **Registro en el MCP de Infraestructura:** Registrar el servicio `como-gasto` en el MCP en vivo (`http://192.168.10.160:3006/sse`).
-- [ ] **Revisión de Commits y Sincronización:** Confirmar estado limpio del árbol de trabajo con el usuario antes de cualquier push.
+---
+
+## 2. Siguientes Pasos Operacionales 🚀
+
 - [ ] **Firma y Empaque de Producción:** Configurar `key.properties` para generar el Android App Bundle (`.aab`) y build de iOS (`.ipa`).
+- [ ] **Carga en Consola de Google Play:** Subir ficha técnica, capturas 2:1, ícono 512×512, gráfico 1024×500 y credenciales demo (`demo@comogasto.com` / `123456`).
+- [ ] **Carga en App Store Connect:** Subir metadatos y notas de revisión de la app.
