@@ -21,9 +21,10 @@
 > 5. **Manejo de secretos y credenciales:**
 >    - Jamás incluir contraseñas reales, tokens de producción ni claves privadas en commits públicos o archivos de documentación abierta.
 >    - Las credenciales de demostración (`demo@comogasto.com` / `123456`) son estrictamente para evaluación y pruebas locales aisladas.
-> 6. **Alcance exclusivo de MCP (Solo para comunicación entre agentes):**
->    - ⚠️ **MCP es exclusivamente para agentes de IA y herramientas de desarrollo/DevOps.**
->    - La aplicación móvil Flutter **Cómo Gasto** **NUNCA** consume, integra ni depende de MCP ni del socket de sigma-robot. La app funciona de forma 100% autónoma con su arquitectura móvil nativa (Flutter, Firestore, Providers y repositorio local).
+> 6. **Rol de Sigma-robot y alcance exclusivo del chat MCP:**
+>    - **Sigma-robot** es el **Gateway de comunicaciones global para todo el ecosistema** (para todos: usuarios, clientes, servicios y canales como WhatsApp, CRM y web).
+>    - Dentro de este Gateway, el **chat basado en MCP** es el componente diseñado y reservado **exclusivamente para agentes de IA**.
+>    - La aplicación móvil Flutter **Cómo Gasto** no utiliza el chat MCP, operando de forma autónoma con su arquitectura nativa.
 
 ---
 
