@@ -78,6 +78,8 @@ Brindar a los usuarios una herramienta financiera ágil para registrar compras d
 > ⚠️ La infraestructura es compartida por todo el ecosistema Telcotronics.
 > La fuente de verdad es el **MCP de Infraestructura Telcotronics** (SSE `http://192.168.10.160:3006/sse`, panel `:3007`).
 > La copia espejo local mantenida en el proyecto es [`.agente/infraestructura.md`](.agente/infraestructura.md).
+>
+> 🛑 **IMPORTANTE:** MCP y el hub `sigma-robot` son **EXCLUSIVAMENTE** canales de comunicación, inventario y coordinación entre **AGENTES DE IA y herramientas DevOps**. La aplicación móvil Flutter cliente (`como_gasto`) **NUNCA** se conecta a MCP ni depende de él. La app funciona de forma 100% autónoma.
 
 - **Repositorio Git Oficial:** `https://github.com/telcotronics/como-gasto.git`
 - **Categoría MCP:** `application` / `client-app`

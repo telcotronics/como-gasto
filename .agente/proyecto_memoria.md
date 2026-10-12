@@ -30,3 +30,7 @@
 
 ### C. Pipeline Gráfico Matemático
 - Siguiendo el estándar validado en otros proyectos de Telcotronics (como `seguridad_electronica`), se adoptó el estándar de captura con recorte matemático simétrico `(0, 152, 1344, 152 + 2688)` para eliminar las barras de estado y gestos de Android en resolución nativa de 1344×2992 (Pixel 8 Pro), generando activos limpios en relación 1:2 / 2:1 (`1344×2688`).
+
+### D. Aislamiento Estricto de MCP y sigma-robot
+- Se definió formalmente que el protocolo MCP (Model Context Protocol) y el ecosistema de mensajería `sigma-robot` pertenecen exclusivamente al plano de coordinación entre **agentes de IA y utilidades DevOps**.
+- La aplicación Flutter móvil cliente no contiene ni contendrá dependencias ni llamadas a MCP, garantizando su autonomía e independencia de ejecución.
