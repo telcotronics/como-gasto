@@ -35,7 +35,13 @@ class MyApp extends StatelessWidget {
         ProxyProvider<LoginState, ExpensesRepository>(
           update: (_, LoginState value, __) {
             if (value.isLoggedIn()) {
-              return ExpensesRepository(value.currentUser().uid);
+              // Modificación para publicación en tiendas (Google Play Store / Apple App Store):
+              // Si el usuario ingresa en modo Demo o sin FirebaseUser activo, se asigna el
+              // identificador 'demo_reviewer' para cargar datos locales sin errores.
+              final uid = (value.isDemo() || value.currentUser() == null)
+                  ? 'demo_reviewer'
+                  : value.currentUser().uid;
+              return ExpensesRepository(uid);
             }
             return null;
           },

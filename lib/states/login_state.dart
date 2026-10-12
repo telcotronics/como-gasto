@@ -15,6 +15,15 @@ class LoginState with ChangeNotifier {
 
   FirebaseUser _user;
 
+  // Modificación para publicación en tiendas:
+  // Soporte de cuenta demo con credenciales fijas requerida por Google Play Console
+  // y Apple App Store para evaluación humana de la app sin depender de servicios externos.
+  bool _isDemo = false;
+  static const String DEMO_EMAIL = 'demo@comogasto.com';
+  static const String DEMO_PIN = '123456';
+
+  bool isDemo() => _isDemo;
+
   LoginState({
     @required SharedPreferences preferences,
     @required FirebaseAuth firebaseAuth,
@@ -32,6 +41,25 @@ class LoginState with ChangeNotifier {
   bool isLoading() => _loading;
 
   FirebaseUser currentUser() => _user;
+
+  // Modificación para publicación en tiendas:
+  // Permite iniciar sesión inmediata en modo demo/revisión validando correo y PIN fijos.
+  Future<bool> loginDemo({String email = DEMO_EMAIL, String pin = DEMO_PIN}) async {
+    if (email.trim().toLowerCase() == DEMO_EMAIL && pin.trim() == DEMO_PIN) {
+      _loading = true;
+      notifyListeners();
+
+      _isDemo = true;
+      _loggedIn = true;
+      await _prefs.setBool('isLoggedIn', true);
+      await _prefs.setBool('isDemo', true);
+
+      _loading = false;
+      notifyListeners();
+      return true;
+    }
+    return false;
+  }
 
   Future<void> login(LoginProvider loginProvider) async {
     _authenticationProvider =
@@ -64,13 +92,27 @@ class LoginState with ChangeNotifier {
       _authenticationProvider.logout();
       _authenticationProvider = null;
     }
-    _auth.signOut();
+    // Modificación para publicación en tiendas:
+    // Captura segura de logout en caso de sesión demo sin backend Firebase
+    try {
+      _auth.signOut();
+    } catch (_) {}
     _loggedIn = false;
+    _isDemo = false;
     notifyListeners();
   }
 
   void loginState() async {
     if (_prefs.containsKey('isLoggedIn')) {
+      // Modificación para publicación en tiendas:
+      // Restauración de sesión demo persistida localmente
+      _isDemo = _prefs.getBool('isDemo') ?? false;
+      if (_isDemo) {
+        _loggedIn = true;
+        _loading = false;
+        notifyListeners();
+        return;
+      }
       _user = await _auth.currentUser();
       _loggedIn = _user != null;
       _loading = false;
