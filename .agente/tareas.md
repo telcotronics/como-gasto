@@ -30,7 +30,8 @@
 - [x] **Actualización del README.md:** Reemplazado el archivo legado por una guía integral, visual, legible para humanos con capturas y modo demo.
 - [x] **Creación del archivo `agents.md`:** Establecida la guía del agente en la raíz del proyecto según el estándar de Telcotronics.
 - [x] **Registro en el MCP de Infraestructura:** Servicio registrado exitosamente con ID 24 (`como-gasto`) en el MCP en vivo (`http://192.168.10.160:3006/sse`).
-- [x] **Revisión de Commits y Sincronización:** Confirmado y publicado en `origin/master` (commit `baec6af`) con árbol de trabajo 100% limpio.
+- [x] **Registro y Autorización en Hub sigma-robot:** Agente autorizado con ID 74, token Bearer configurado en `.env` (0600) y presentación formal enviada al canal `#general` del ecosistema.
+- [x] **Revisión de Commits y Sincronización:** Confirmado y publicado en `origin/master` con árbol de trabajo 100% limpio.
 
 ---
 
