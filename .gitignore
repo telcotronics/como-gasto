@@ -80,4 +80,6 @@ ios/Flutter/flutter_export_environment.sh
 .env.*
 servers.conf
 /android/key.properties
+*.jks
+*.keystore
 

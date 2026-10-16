@@ -1,0 +1,7 @@
+# Plantilla de configuración de firma para Android Release (Google Play)
+# Copiar este archivo como 'android/key.properties' y completar con los valores reales.
+# El archivo 'key.properties' está ignorado en .gitignore para resguardar las claves.
+storeFile=upload-keystore.jks
+storePassword=REPLACE_LOCALLY
+keyAlias=como-gasto-upload
+keyPassword=REPLACE_LOCALLY

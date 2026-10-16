@@ -6,6 +6,13 @@ if (localPropertiesFile.exists()) {
     }
 }
 
+// Carga de credenciales de firma de producción desde android/key.properties (ignorado por Git)
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
     throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
@@ -47,11 +54,23 @@ android {
         multiDexEnabled true
     }
 
+    // Configuración de firmas: se usa la clave de producción si key.properties existe;
+    // de lo contrario, se mantiene la firma debug para no romper entornos locales de desarrollo.
+    signingConfigs {
+        release {
+            if (keystorePropertiesFile.exists()) {
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+                storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+                storePassword keystoreProperties['storePassword']
+            }
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            // Asigna automáticamente signingConfigs.release si el archivo key.properties está presente
+            signingConfig (keystorePropertiesFile.exists() ? signingConfigs.release : signingConfigs.debug)
         }
     }
 }

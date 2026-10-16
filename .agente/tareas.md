@@ -31,12 +31,13 @@
 - [x] **Creación del archivo `agents.md`:** Establecida la guía del agente en la raíz del proyecto según el estándar de Telcotronics.
 - [x] **Registro en el MCP de Infraestructura:** Servicio registrado exitosamente con ID 24 (`como-gasto`) en el MCP en vivo (`http://192.168.10.160:3006/sse`).
 - [x] **Registro y Autorización en Hub sigma-robot:** Agente autorizado con ID 74, token Bearer configurado en `.env` (0600) y presentación formal enviada al canal `#general` del ecosistema.
+- [x] **Configuración de Firma y Plantilla de Keystore (Android):** Soporte condicional para `android/key.properties` en `build.gradle`, plantilla `android/key.properties.example` y protección de `*.jks`/`*.keystore` en `.gitignore`.
 - [x] **Revisión de Commits y Sincronización:** Confirmado y publicado en `origin/master` con árbol de trabajo 100% limpio.
 
 ---
 
 ## 2. Siguientes Pasos Operacionales 🚀
 
-- [ ] **Firma y Empaque de Producción:** Configurar `key.properties` para generar el Android App Bundle (`.aab`) y build de iOS (`.ipa`).
+- [ ] **Empaque de Producción:** Completar `key.properties` con la clave real y generar el Android App Bundle (`.aab`) o build de iOS (`.ipa`).
 - [ ] **Carga en Consola de Google Play:** Subir ficha técnica, capturas 2:1, ícono 512×512, gráfico 1024×500 y credenciales demo (`demo@comogasto.com` / `123456`).
 - [ ] **Carga en App Store Connect:** Subir metadatos y notas de revisión de la app.
