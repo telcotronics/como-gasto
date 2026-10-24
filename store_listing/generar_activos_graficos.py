@@ -85,6 +85,49 @@ def generar_icono_512():
     print(f"✓ Ícono oficial de tienda generado: {dest_path} (512x512 RGB)")
 
 # ─────────────────────────────────────────────────────────────────────────────
+# 1.1 ÍCONO DE APP STORE: 1024x1024 PNG sin transparencias (Apple App Store Connect)
+# ─────────────────────────────────────────────────────────────────────────────
+def generar_icono_1024():
+    size = (1024, 1024)
+    canvas = Image.new("RGB", size, COLOR_PRIMARY)
+    draw = ImageDraw.Draw(canvas)
+    
+    # Fondo con sutil degradado radial
+    for y in range(size[1]):
+        ratio = y / size[1]
+        r = int(COLOR_PRIMARY[0] * (1 - ratio * 0.2))
+        g = int(COLOR_PRIMARY[1] * (1 - ratio * 0.2))
+        b = int(COLOR_PRIMARY[2] * (1 - ratio * 0.15))
+        draw.line([(0, y), (size[0], y)], fill=(r, g, b))
+        
+    logo_src_path = "assets/launcher_icon_ios.png"
+    if os.path.exists(logo_src_path):
+        logo_im = Image.open(logo_src_path).convert("RGBA")
+        logo_size = 920
+        logo_resized = logo_im.resize((logo_size, logo_size), Image.Resampling.LANCZOS)
+        
+        shadow = Image.new("RGBA", size, (0, 0, 0, 0))
+        shadow_draw = ImageDraw.Draw(shadow)
+        offset = (size[0] - logo_size) // 2
+        shadow_draw.rounded_rectangle(
+            [offset, offset + 12, offset + logo_size, offset + logo_size + 12],
+            radius=180,
+            fill=(0, 0, 0, 70)
+        )
+        shadow = shadow.filter(ImageFilter.GaussianBlur(radius=24))
+        
+        canvas_rgba = canvas.convert("RGBA")
+        canvas_rgba.alpha_composite(shadow)
+        canvas_rgba.alpha_composite(logo_resized, (offset, offset))
+        final_icon = canvas_rgba.convert("RGB")
+    else:
+        final_icon = canvas
+        
+    dest_path = os.path.join(OUTPUT_DIR, "icono_1024.png")
+    final_icon.save(dest_path, "PNG", optimize=True)
+    print(f"✓ Ícono oficial de App Store generado: {dest_path} (1024x1024 RGB)")
+
+# ─────────────────────────────────────────────────────────────────────────────
 # 2. GRÁFICO DESTACADO: 1024x500 PNG sin transparencias
 # ─────────────────────────────────────────────────────────────────────────────
 def generar_grafico_destacado():
@@ -494,6 +537,7 @@ def generar_capturas_tienda():
 if __name__ == "__main__":
     print("Iniciando generación de activos gráficos y capturas de tienda...")
     generar_icono_512()
+    generar_icono_1024()
     generar_grafico_destacado()
     generar_capturas_tienda()
     print("Todos los activos gráficos y capturas oficiales fueron generados con éxito.")

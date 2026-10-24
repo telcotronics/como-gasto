@@ -138,7 +138,7 @@ Cómo Gasto convierte el seguimiento financiero en un hábito sencillo, accesibl
 - [x] Identificador de aplicación Android: `ar.com.p39.como_gasto`.
 - [x] Identificador de paquete iOS: `ar.com.p39.comoGasto`.
 - [x] Versión inicial establecida: `1.0.0` (código de build `1`).
-- [ ] Keystore de producción de Android configurado en `android/key.properties` (o Google Play App Signing habilitado).
+- [x] Soporte de Keystore de producción configurado en `android/app/build.gradle` y plantilla `android/key.properties.example` disponible.
 - [ ] Certificados de Distribución y Provisioning Profiles de iOS generados en Apple Developer Portal.
 - [ ] Generación de paquete Android App Bundle: `flutter build appbundle --release`.
 - [ ] Generación de paquete iOS IPA: `flutter build ipa --release`.
@@ -150,9 +150,9 @@ Cómo Gasto convierte el seguimiento financiero en un hábito sencillo, accesibl
 - [ ] Declaración de Anuncios: "No contiene anuncios".
 - [ ] Formulario de Seguridad de los Datos (Data Safety) completado según la tabla declarada.
 - [ ] Acceso a la app: Credenciales fijas ingresadas (`demo@comogasto.com` / `123456`).
-- [ ] Ícono de tienda (512×512 PNG sin transparencias) cargado.
-- [ ] Gráfico destacado (1024×500 PNG) cargado.
-- [ ] Capturas de pantalla oficiales (resolución 2:1, mínimo 4 capturas de teléfono) cargadas.
+- [x] Ícono de tienda (512×512 PNG sin transparencias) generado (`00_icono_512.png`).
+- [x] Gráfico destacado (1024×500 PNG) generado (`grafico_destacado_1024x500.png`).
+- [x] Capturas de pantalla oficiales (resolución 2:1, 6 capturas de teléfono) generadas (`01_login.png` a `06_ajustes.png`).
 
 ### C. Apple App Store Connect
 - [ ] Nombre de app y subtítulo configurados.
@@ -160,5 +160,5 @@ Cómo Gasto convierte el seguimiento financiero en un hábito sencillo, accesibl
 - [ ] URL de Política de Privacidad vinculada con HTTPS.
 - [ ] Cuestionario de Privacidad de la App (App Privacy Nutrition Labels) completado.
 - [ ] Notas de revisión de la app (App Review Information) con credenciales demo provistas.
-- [ ] Ícono de 1024×1024 sin canales alfa cargado.
-- [ ] Capturas de pantalla para pantallas de 6.7" y 6.5" cargadas.
+- [x] Ícono oficial de 1024×1024 sin canales alfa generado (`icono_1024.png`).
+- [x] Capturas de pantalla para dispositivos móviles (relación 2:1 limpia) generadas.

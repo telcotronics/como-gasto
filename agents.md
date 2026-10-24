@@ -16,7 +16,7 @@ Se ha implementado una arquitectura anti-rechazo con cuenta demo local desacopla
 - **Usuario Demo:** `demo@comogasto.com`
 - **PIN Demo:** `123456`
 - **Persistencia y datos locales:** Repositorio en memoria con transacciones precargadas para que el revisor humano de la tienda aprecie de inmediato los gráficos de barras, gráficos de torta y balances sin depender de Firebase ni conexión a internet.
-- **Activos de tienda:** Ficha técnica oficial (`ficha_tienda.md`), política de privacidad responsive (`politica_privacidad.html`), ícono 512×512 PNG sin transparencias, gráfico destacado 1024×500 PNG y set ordenado de 6 capturas de teléfono en relación 2:1 (`1344×2688`) con recorte simétrico.
+- **Activos de tienda:** Ficha técnica oficial (`ficha_tienda.md`), política de privacidad responsive (`politica_privacidad.html`), ícono 512×512 PNG sin transparencias (Google Play), ícono 1024×1024 PNG sin transparencias (App Store), gráfico destacado 1024×500 PNG y set ordenado de 6 capturas de teléfono en relación 2:1 (`1344×2688`) con recorte simétrico.
 
 ---
 

@@ -99,7 +99,8 @@ El proyecto incluye el paquete completo de activos y textos listo para la consol
 - 📄 [**`store_listing/ficha_tienda.md`**](store_listing/ficha_tienda.md): Ficha técnica oficial con nombres, descripciones de marketing, declaraciones legales, tabla de Seguridad de los Datos (Data Safety) y notas de la versión.
 - 🔒 [**`store_listing/politica_privacidad.html`**](store_listing/politica_privacidad.html): Política de privacidad estática responsive conforme a GDPR y CCPA.
 - 🎨 [**`store_listing/graficos/`**](store_listing/graficos/):
-  - `00_icono_512.png`: Ícono 512×512 PNG sin transparencias.
+  - `00_icono_512.png`: Ícono 512×512 PNG sin transparencias (Google Play).
+  - `icono_1024.png`: Ícono 1024×1024 PNG sin transparencias (Apple App Store).
   - `grafico_destacado_1024x500.png`: Banner destacado 1024×500 PNG.
   - `01_login.png` a `06_ajustes.png`: Set de 6 capturas en proporción 2:1 (1344×2688).
 
